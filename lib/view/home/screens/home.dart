@@ -1,9 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopify/res/colors.dart';
-import 'package:shopify/res/style/card_icon.dart';
 import 'package:shopify/res/style/card_row.dart';
 import 'package:shopify/res/style/text_widget.dart';
 import 'package:shopify/view/home/widget/animation.dart';
@@ -39,7 +37,6 @@ class HomeScreen extends StatelessWidget {
                       "Shopify",
                       style: GoogleFonts.aladin(
                         textStyle: const TextStyle(
-                          // fontWeight: FontWeight.bold,
                           fontSize: 30,
                         ),
                       ),
@@ -61,11 +58,11 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Card(
-                elevation: 50,
-                shadowColor: Colors.black,
-                color: Colors.greenAccent[100],
-                child: const SizedBox(
+              const Card(
+                elevation: 25,
+                shadowColor: Color.fromARGB(255, 239, 239, 194),
+                color: Color.fromARGB(255, 244, 234, 181),
+                child: SizedBox(
                   width: 300,
                   height: 180,
                   child: Padding(
@@ -87,6 +84,38 @@ class HomeScreen extends StatelessWidget {
                           iconNameOne: "Wishlist",
                           iconNameTwo: "About Us",
                           iconNameThree: "T & C",
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const Card(
+                elevation: 25,
+                shadowColor: Color.fromARGB(255, 239, 144, 176),
+                color: Color.fromARGB(255, 241, 198, 223),
+                child: SizedBox(
+                  width: 300,
+                  height: 180,
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        CardRow(
+                          iconOne: Icons.electrical_services_rounded,
+                          iconTwo: Icons.person_2_rounded,
+                          iconThree: Icons.girl_rounded,
+                          iconNameOne: "Electronics",
+                          iconNameTwo: "Clothing(M)",
+                          iconNameThree: "Clothing(W)",
+                        ),
+                        CardRow(
+                          iconOne: Icons.diamond_outlined,
+                          iconTwo: Icons.shopping_cart_outlined,
+                          iconThree: Icons.headset_mic_sharp,
+                          iconNameOne: "Jewellery",
+                          iconNameTwo: "Cart",
+                          iconNameThree: "Support",
                         ),
                       ],
                     ),

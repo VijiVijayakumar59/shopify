@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopify/view/home/screens/bottom_nav.dart';
 import 'package:shopify/view/home/screens/home.dart';
 
 void main() {
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 234, 223, 124)),
         useMaterial3: true,
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
