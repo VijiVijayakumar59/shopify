@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shopify/view/womens_clothing/widgets/grid_view.dart';
 
 class WomensClothing extends StatelessWidget {
-  const WomensClothing({super.key});
+  const WomensClothing({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

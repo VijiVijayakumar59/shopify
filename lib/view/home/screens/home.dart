@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shopify/res/colors.dart';
 import 'package:shopify/res/style/card_row.dart';
 import 'package:shopify/res/style/text_widget.dart';
+import 'package:shopify/view/cart/screens/cart.dart';
 import 'package:shopify/view/home/widget/animation.dart';
 import 'package:shopify/view/home/widget/categories.dart';
 import 'package:shopify/view/home/widget/popular_products.dart';
@@ -128,7 +129,13 @@ class HomeScreen extends StatelessWidget {
                           iconNameThree: "Clothing(W)",
                         ),
                         CardRow(
-                          onPressTwo: () {},
+                          onPressTwo: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const CartScreen(),
+                              ),
+                            );
+                          },
                           onPressThree: () {},
                           onPressOne: () {},
                           iconOne: Icons.diamond_outlined,
