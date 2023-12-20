@@ -8,9 +8,15 @@ class CardRow extends StatelessWidget {
   final String? iconNameOne;
   final String? iconNameTwo;
   final String? iconNameThree;
+  final void Function()? onPressOne;
+  final void Function()? onPressTwo;
+  final void Function()? onPressThree;
 
   const CardRow({
     super.key,
+    required this.onPressOne,
+    required this.onPressTwo,
+    required this.onPressThree,
     required this.iconOne,
     required this.iconTwo,
     required this.iconThree,
@@ -25,14 +31,17 @@ class CardRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CardIcon(
+          onPress: onPressOne,
           icon: iconOne,
           iconName: iconNameOne,
         ),
         CardIcon(
+          onPress: onPressTwo,
           icon: iconTwo,
           iconName: iconNameTwo,
         ),
         CardIcon(
+          onPress: onPressThree,
           icon: iconThree,
           iconName: iconNameThree,
         )

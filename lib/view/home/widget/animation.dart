@@ -38,7 +38,11 @@ class _AnimatedBuilderExampleState extends State<AnimatedBuilderExample>
           height: 100,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: const [Colors.yellow, Colors.pink, Colors.greenAccent],
+              colors: const [
+                Colors.yellow,
+                Color.fromARGB(255, 232, 212, 121),
+                Color.fromARGB(255, 234, 209, 65)
+              ],
               stops: [0, _controller.value, 1],
             ),
             borderRadius: BorderRadius.circular(15),

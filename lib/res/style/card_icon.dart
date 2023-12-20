@@ -17,7 +17,7 @@ class CardIcon extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {
-            onPress;
+            onPress!();
           },
           icon: Icon(
             icon,
@@ -26,7 +26,6 @@ class CardIcon extends StatelessWidget {
         ),
         Text(
           iconName!,
-          
         )
       ],
     );

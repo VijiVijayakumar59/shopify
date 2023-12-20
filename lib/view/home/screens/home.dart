@@ -8,6 +8,7 @@ import 'package:shopify/view/home/widget/animation.dart';
 import 'package:shopify/view/home/widget/categories.dart';
 import 'package:shopify/view/home/widget/popular_products.dart';
 import 'package:shopify/view/home/widget/search_bar.dart';
+import 'package:shopify/view/womens_clothing/screens/women_clothing.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -24,8 +25,8 @@ class HomeScreen extends StatelessWidget {
                   gradient: LinearGradient(
                     colors: [
                       Color.fromARGB(255, 231, 217, 91),
-                      Color.fromARGB(255, 233, 140, 171),
-                      Colors.greenAccent,
+                      Color.fromARGB(255, 230, 178, 105),
+                      Color.fromARGB(255, 239, 214, 52),
                     ],
                     begin: Alignment.bottomLeft,
                     end: Alignment.topRight,
@@ -58,18 +59,22 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const Card(
+              Card(
+                surfaceTintColor: whiteColor,
                 elevation: 25,
-                shadowColor: Color.fromARGB(255, 239, 239, 194),
-                color: Color.fromARGB(255, 244, 234, 181),
+                // shadowColor: Color.fromARGB(255, 240, 218, 77),
+                // color: const Color.fromARGB(255, 244, 234, 181),
                 child: SizedBox(
-                  width: 300,
-                  height: 180,
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  height: MediaQuery.of(context).size.width * 0.45,
                   child: Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
                         CardRow(
+                          onPressTwo: () {},
+                          onPressThree: () {},
+                          onPressOne: () {},
                           iconOne: Icons.home_outlined,
                           iconTwo: Icons.shopify,
                           iconThree: Icons.person_2_outlined,
@@ -78,6 +83,9 @@ class HomeScreen extends StatelessWidget {
                           iconNameThree: "Account",
                         ),
                         CardRow(
+                          onPressTwo: () {},
+                          onPressThree: () {},
+                          onPressOne: () {},
                           iconOne: Icons.favorite_outlined,
                           iconTwo: Icons.menu_book_outlined,
                           iconThree: Icons.my_library_books_sharp,
@@ -90,18 +98,28 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const Card(
+              Card(
+                surfaceTintColor: whiteColor,
                 elevation: 25,
-                shadowColor: Color.fromARGB(255, 239, 144, 176),
-                color: Color.fromARGB(255, 241, 198, 223),
+                // shadowColor: Color.fromARGB(255, 240, 218, 77),
+                // color: const Color.fromARGB(255, 244, 234, 181),
                 child: SizedBox(
-                  width: 300,
-                  height: 180,
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  height: MediaQuery.of(context).size.width * 0.45,
                   child: Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
                         CardRow(
+                          onPressTwo: () {},
+                          onPressThree: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const WomensClothing(),
+                              ),
+                            );
+                          },
+                          onPressOne: () {},
                           iconOne: Icons.electrical_services_rounded,
                           iconTwo: Icons.person_2_rounded,
                           iconThree: Icons.girl_rounded,
@@ -110,6 +128,9 @@ class HomeScreen extends StatelessWidget {
                           iconNameThree: "Clothing(W)",
                         ),
                         CardRow(
+                          onPressTwo: () {},
+                          onPressThree: () {},
+                          onPressOne: () {},
                           iconOne: Icons.diamond_outlined,
                           iconTwo: Icons.shopping_cart_outlined,
                           iconThree: Icons.headset_mic_sharp,
@@ -142,6 +163,7 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.only(top: 0, left: 8, right: 8),
           child: SingleChildScrollView(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const searchWidget(),
                 Column(
