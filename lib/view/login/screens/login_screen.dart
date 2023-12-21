@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shopify/res/colors.dart';
 import 'package:shopify/res/components/elevated_button.dart';
 import 'package:shopify/view/login/widgets/textform_widget.dart';
+import 'package:shopify/view/signup/screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -11,7 +12,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.height * 0.9,
           child: Image.asset(
             "assets/images/auth screen.jpg",
@@ -41,6 +42,9 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.09,
+                ),
                 Text(
                   "Login",
                   style: GoogleFonts.cinzel(
@@ -55,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const TextFormWidget(
                   hintText: "Enter your email",
-                  prefixIcon: Icons.person,
+                  prefixIcon: Icons.email,
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.02,
@@ -65,12 +69,77 @@ class LoginScreen extends StatelessWidget {
                   prefixIcon: Icons.lock,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.02,
+                  height: MediaQuery.of(context).size.height * 0.04,
                 ),
-                const ElevatedButtonWidget(
+                ElevatedButtonWidget(
+                  onPress: () {},
                   text: "Login",
-                  color: mainColor,
-                )
+                  bgColor: mainColor,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.04,
+                ),
+                Container(
+                  alignment: Alignment.bottomCenter,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "or login with",
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                              color: whiteColor,
+                            ),
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                'assets/images/google.jpg',
+                              ),
+                              fit: BoxFit.fitWidth,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                      const Text(
+                        "Not an User?",
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const SignUpScreen(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Sign Up",
+                          style: GoogleFonts.cinzel(
+                            textStyle: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: blackColor,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

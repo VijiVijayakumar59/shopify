@@ -23,7 +23,7 @@ class CartWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
+            SizedBox(
               // decoration: BoxDecoration(
               //   borderRadius: BorderRadius.circular(
               //     40,
@@ -36,9 +36,9 @@ class CartWidget extends StatelessWidget {
                 fit: BoxFit.fitWidth,
               ),
             ),
-            Column(
+            const Column(
               children: [
-                const SizedBox(
+                SizedBox(
                   width: 160,
                   child: Text(
                     "Elegant Sweatshirt",

@@ -3,11 +3,11 @@ import 'package:shopify/res/colors.dart';
 
 class TextFormWidget extends StatelessWidget {
   final String hintText;
-  final IconData prefixIcon;
+  final IconData? prefixIcon;
   const TextFormWidget({
     super.key,
     required this.hintText,
-    required this.prefixIcon,
+    this.prefixIcon,
   });
 
   @override
@@ -15,7 +15,7 @@ class TextFormWidget extends StatelessWidget {
     return TextFormField(
       decoration: InputDecoration(
         fillColor: whiteColor,
-        contentPadding: EdgeInsets.all(8),
+        contentPadding: const EdgeInsets.all(8),
         prefixIcon: Icon(
           prefixIcon,
         ),

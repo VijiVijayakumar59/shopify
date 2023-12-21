@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:shopify/res/colors.dart';
 
+// ignore: must_be_immutable
 class ElevatedButtonWidget extends StatelessWidget {
   final String text;
-  final Color color;
-  const ElevatedButtonWidget({
+  final Color bgColor;
+
+  final Color? textColor;
+  void Function()? onPress;
+  ElevatedButtonWidget({
     super.key,
     required this.text,
-    required this.color,
+    this.textColor,
+    required this.bgColor,
+    required this.onPress,
   });
 
   @override
@@ -15,16 +21,16 @@ class ElevatedButtonWidget extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         foregroundColor: blackColor,
-        backgroundColor: mainColor,
+        backgroundColor: bgColor,
         textStyle: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
-          color: color,
+          color: bgColor,
         ),
       ),
-      onPressed: () {},
-      child: const Text(
-        "Login",
+      onPressed: onPress!,
+      child: Text(
+        text,
       ),
     );
   }

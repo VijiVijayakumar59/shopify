@@ -16,7 +16,7 @@ class Tile extends StatelessWidget {
           height: MediaQuery.of(context).size.height * 0.28,
           width: 200,
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 239, 226, 129),
+            color: const Color.fromARGB(255, 239, 226, 129),
             borderRadius: BorderRadius.circular(8.0),
           ),
           child: IconButton(

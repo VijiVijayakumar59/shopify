@@ -3,7 +3,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopify/res/colors.dart';
 import 'package:shopify/res/components/elevated_button.dart';
-import 'package:shopify/view/cart/widgets/cart_counter.dart';
+import 'package:shopify/view/cart/screens/address.dart';
 import 'package:shopify/view/cart/widgets/cart_widget.dart';
 
 class CartScreen extends StatelessWidget {
@@ -118,8 +118,11 @@ class CartScreen extends StatelessWidget {
               ),
               const Center(
                 child: Text(
-                  "Payments",
-                  style: TextStyle(fontSize: 18),
+                  "Price Details",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               const Padding(
@@ -151,7 +154,7 @@ class CartScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "T0tal",
+                          "Total",
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                           ),
@@ -191,8 +194,15 @@ class CartScreen extends StatelessWidget {
               ),
               Center(
                 child: ElevatedButtonWidget(
-                  text: "Check Out",
-                  color: yellowColor,
+                  onPress: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const OrderSummary(),
+                      ),
+                    );
+                  },
+                  text: "Proceed",
+                  bgColor: yellowColor,
                 ),
               ),
             ],

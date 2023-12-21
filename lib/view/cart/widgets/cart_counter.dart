@@ -1,6 +1,10 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 class CartCounter extends StatefulWidget {
+  const CartCounter({super.key});
+
   @override
   _CartCounterState createState() => _CartCounterState();
 }
@@ -28,11 +32,13 @@ class _CartCounterState extends State<CartCounter> {
                 });
               }
             },
-            child: Icon(Icons.remove),
+            child: const Icon(
+              Icons.remove,
+            ),
           ),
           Text(
             itemCount.toString(),
-            style: TextStyle(fontSize: 18),
+            style: const TextStyle(fontSize: 18),
           ),
           GestureDetector(
             onTap: () {
@@ -41,7 +47,7 @@ class _CartCounterState extends State<CartCounter> {
                 itemCount++;
               });
             },
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
         ],
       ),
