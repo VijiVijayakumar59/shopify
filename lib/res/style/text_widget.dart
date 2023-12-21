@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shopify/res/colors.dart';
 
 class TwoTextWidget extends StatelessWidget {
@@ -16,19 +17,19 @@ class TwoTextWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          textOne!,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-          ),
-        ),
+        Text(textOne!,
+            style: GoogleFonts.anekDevanagari(
+              textStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            )),
         Text(
           textTwo!,
           style: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
-            color: greyColor,
+            color: lightYellow,
           ),
         ),
       ],

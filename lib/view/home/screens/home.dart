@@ -9,6 +9,7 @@ import 'package:shopify/view/home/widget/animation.dart';
 import 'package:shopify/view/home/widget/categories.dart';
 import 'package:shopify/view/home/widget/popular_products.dart';
 import 'package:shopify/view/home/widget/search_bar.dart';
+import 'package:shopify/view/wishlist/screens/wishlist_screen.dart';
 import 'package:shopify/view/womens_clothing/screens/women_clothing.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -25,9 +26,9 @@ class HomeScreen extends StatelessWidget {
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Color.fromARGB(255, 231, 217, 91),
-                      Color.fromARGB(255, 230, 178, 105),
-                      Color.fromARGB(255, 239, 214, 52),
+                      Color.fromARGB(255, 255, 232, 24),
+                      Color.fromARGB(255, 230, 218, 105),
+                      Color.fromARGB(255, 255, 225, 30),
                     ],
                     begin: Alignment.bottomLeft,
                     end: Alignment.topRight,
@@ -60,13 +61,16 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
               Card(
                 surfaceTintColor: whiteColor,
                 elevation: 25,
                 // shadowColor: Color.fromARGB(255, 240, 218, 77),
                 // color: const Color.fromARGB(255, 244, 234, 181),
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.3,
+                  // width: MediaQuery.of(context).size.width * 0.1,
                   height: MediaQuery.of(context).size.width * 0.45,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -86,7 +90,13 @@ class HomeScreen extends StatelessWidget {
                         CardRow(
                           onPressTwo: () {},
                           onPressThree: () {},
-                          onPressOne: () {},
+                          onPressOne: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const WishlistScreen(),
+                              ),
+                            );
+                          },
                           iconOne: Icons.favorite_outlined,
                           iconTwo: Icons.menu_book_outlined,
                           iconThree: Icons.my_library_books_sharp,
@@ -99,13 +109,16 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
               Card(
                 surfaceTintColor: whiteColor,
                 elevation: 25,
                 // shadowColor: Color.fromARGB(255, 240, 218, 77),
                 // color: const Color.fromARGB(255, 244, 234, 181),
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.3,
+                  // width: MediaQuery.of(context).size.width * 0.3,
                   height: MediaQuery.of(context).size.width * 0.45,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -154,12 +167,13 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         appBar: AppBar(
-          title: const Text(
-            "Home",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          title: Text("Shopify",
+              style: GoogleFonts.aladin(
+                textStyle: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 32,
+                ),
+              )),
           actions: const [
             Icon(
               Icons.notifications_none_rounded,
@@ -197,18 +211,24 @@ class HomeScreen extends StatelessWidget {
                         Container(
                           margin: const EdgeInsets.all(6.0),
                           decoration: BoxDecoration(
+                            border: Border.all(
+                              color: lightYellow,
+                            ),
                             borderRadius: BorderRadius.circular(8.0),
                             image: const DecorationImage(
                               image: NetworkImage(
                                 "https://www.shutterstock.com/image-photo/vintage-red-shoes-on-white-260nw-92008067.jpg",
                               ),
-                              fit: BoxFit.cover,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
                         Container(
                           margin: const EdgeInsets.all(6.0),
                           decoration: BoxDecoration(
+                            border: Border.all(
+                              color: lightYellow,
+                            ),
                             borderRadius: BorderRadius.circular(8.0),
                             image: const DecorationImage(
                               image: NetworkImage(
@@ -220,11 +240,11 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ],
                       options: CarouselOptions(
-                        height: 180.0,
+                        height: 300.0,
                         enlargeCenterPage: true,
                         autoPlay: true,
                         aspectRatio: 16 / 9,
-                        autoPlayCurve: Curves.decelerate,
+                        autoPlayCurve: Curves.fastOutSlowIn,
                         enableInfiniteScroll: true,
                         autoPlayAnimationDuration:
                             const Duration(milliseconds: 800),
@@ -238,7 +258,13 @@ class HomeScreen extends StatelessWidget {
                       textOne: "Popular Products",
                       textTwo: "See all",
                     ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.01,
+                    ),
                     const PopularProductsWidget(),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.01,
+                    ),
                     const AnimatedBuilderExample(),
                   ],
                 )

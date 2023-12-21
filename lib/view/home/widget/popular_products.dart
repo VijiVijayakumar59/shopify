@@ -22,7 +22,7 @@ class PopularProductsWidget extends StatelessWidget {
                     margin: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: lightGrey,
+                        color: lightYellow,
                       ),
                       borderRadius: BorderRadius.circular(8),
                       image: const DecorationImage(

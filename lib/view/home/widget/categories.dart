@@ -17,7 +17,7 @@ class CategoriesWidget extends StatelessWidget {
           return Container(
             decoration: BoxDecoration(
               border: Border.all(
-                color: lightGrey,
+                color: lightYellow,
               ),
               borderRadius: BorderRadius.circular(8),
               image: const DecorationImage(
