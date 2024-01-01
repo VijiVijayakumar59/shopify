@@ -35,7 +35,7 @@ class _AnimatedBuilderExampleState extends State<AnimatedBuilderExample>
       animation: _controller,
       builder: (BuildContext context, Widget? child) {
         return Container(
-          height: 100,
+          height: MediaQuery.of(context).size.height * 0.12,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: const [

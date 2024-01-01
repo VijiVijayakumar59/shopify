@@ -27,7 +27,7 @@ class WomensClothing extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 130,
+                    width: MediaQuery.of(context).size.width * 0.33,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,

@@ -74,18 +74,18 @@ class OrderSummary extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    width: 185,
-                    child: TextFormWidget(
+                    width: MediaQuery.of(context).size.width * 0.46,
+                    child: const TextFormWidget(
                       hintText: "City / District*",
                     ),
                   ),
                   SizedBox(
-                    width: 185,
-                    child: TextFormWidget(
+                    width: MediaQuery.of(context).size.width * 0.46,
+                    child: const TextFormWidget(
                       hintText: "State*",
                     ),
                   ),
@@ -104,7 +104,7 @@ class OrderSummary extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    width: 120,
+                    width: MediaQuery.of(context).size.width * 0.3,
                     child: ElevatedButtonWidget(
                       text: "Home",
                       bgColor: whiteColor,
@@ -112,7 +112,7 @@ class OrderSummary extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 120,
+                    width: MediaQuery.of(context).size.width * 0.3,
                     child: ElevatedButtonWidget(
                       text: "Work",
                       bgColor: whiteColor,
@@ -120,7 +120,7 @@ class OrderSummary extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 120,
+                    width: MediaQuery.of(context).size.width * 0.3,
                     child: ElevatedButtonWidget(
                       text: "Other",
                       bgColor: whiteColor,
@@ -133,7 +133,7 @@ class OrderSummary extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.06,
               ),
               SizedBox(
-                width: 400,
+                width: MediaQuery.of(context).size.width * 1,
                 child: ElevatedButtonWidget(
                   text: "Continue",
                   bgColor: mainColor,

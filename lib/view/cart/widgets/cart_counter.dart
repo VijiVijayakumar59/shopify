@@ -15,7 +15,7 @@ class _CartCounterState extends State<CartCounter> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 80,
+      width: MediaQuery.of(context).size.width * 0.2,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(8.0),

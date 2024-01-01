@@ -36,11 +36,11 @@ class CartWidget extends StatelessWidget {
                 fit: BoxFit.fitWidth,
               ),
             ),
-            const Column(
+            Column(
               children: [
                 SizedBox(
-                  width: 160,
-                  child: Text(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: const Text(
                     "Elegant Sweatshirt",
                     style: TextStyle(
                       overflow: TextOverflow.ellipsis,
@@ -48,7 +48,7 @@ class CartWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                CartCounter(),
+                const CartCounter(),
               ],
             ),
             const Text(
