@@ -1,5 +1,8 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shopify/view/mens_clothing/widgets/grid_view.dart';
 
 class MensClothing extends StatelessWidget {
   const MensClothing({super.key});
@@ -61,7 +64,7 @@ class MensClothing extends StatelessWidget {
                   ),
                 ],
               ),
-              // const GridViewWidget(),
+              const GridViewWidgetMen(),
             ],
           ),
         ),

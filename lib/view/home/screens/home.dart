@@ -5,11 +5,12 @@ import 'package:shopify/res/colors.dart';
 import 'package:shopify/res/style/card_row.dart';
 import 'package:shopify/res/style/text_widget.dart';
 import 'package:shopify/view/cart/screens/cart.dart';
+import 'package:shopify/view/electronics/screens/electronics_screen.dart';
 import 'package:shopify/view/home/widget/animation.dart';
 import 'package:shopify/view/home/widget/categories.dart';
 import 'package:shopify/view/home/widget/popular_products.dart';
 import 'package:shopify/view/home/widget/search_bar.dart';
-import 'package:shopify/view/mens_clothing/screens/MensClothing.dart';
+import 'package:shopify/view/mens_clothing/screens/mensclothing.dart';
 import 'package:shopify/view/wishlist/screens/wishlist_screen.dart';
 import 'package:shopify/view/womens_clothing/screens/women_clothing.dart';
 
@@ -142,7 +143,14 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               );
                             },
-                            onPressOne: () {},
+                            onPressOne: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ElectronicsScreen(),
+                                ),
+                              );
+                            },
                             iconOne: Icons.electrical_services_rounded,
                             iconTwo: Icons.person_2_rounded,
                             iconThree: Icons.girl_rounded,
