@@ -21,33 +21,49 @@ class WishlistCard extends StatelessWidget {
         crossAxisSpacing: 8.0,
         mainAxisSpacing: 8.0,
       ),
-      itemCount: 2,
+      itemCount: 10,
       itemBuilder: (BuildContext context, int index) {
-        return Card(
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.3,
-            width: MediaQuery.of(context).size.width * 0.46,
-            child: Column(
-              children: [
-                Image.asset(
-                  "assets/images/dress2.png",
-                  fit: BoxFit.cover,
-                ),
-                Text(
-                  name,
-                  style: GoogleFonts.aBeeZee(
-                    textStyle: const TextStyle(
-                      fontSize: 18,
+        return Stack(
+          children: [
+            Card(
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.5,
+                width: MediaQuery.of(context).size.width * 0.46,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.15,
+                      width: MediaQuery.of(context).size.width * 0.46,
+                      child: Image.asset(
+                        "assets/images/dress2.png",
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
+                    Text(
+                      name,
+                      style: GoogleFonts.aBeeZee(
+                        textStyle: const TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                    Text(items),
+                  ],
                 ),
-                Text(items),
-              ],
+              ),
             ),
-          ),
+            Positioned(
+              right: 1,
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.favorite,
+                ),
+              ),
+            ),
+          ],
         );
       },
     );
   }
 }
-

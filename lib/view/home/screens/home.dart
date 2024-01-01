@@ -9,6 +9,7 @@ import 'package:shopify/view/home/widget/animation.dart';
 import 'package:shopify/view/home/widget/categories.dart';
 import 'package:shopify/view/home/widget/popular_products.dart';
 import 'package:shopify/view/home/widget/search_bar.dart';
+import 'package:shopify/view/mens_clothing/screens/MensClothing.dart';
 import 'package:shopify/view/wishlist/screens/wishlist_screen.dart';
 import 'package:shopify/view/womens_clothing/screens/women_clothing.dart';
 
@@ -127,7 +128,13 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           CardRow(
-                            onPressTwo: () {},
+                            onPressTwo: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => const MensClothing(),
+                                ),
+                              );
+                            },
                             onPressThree: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
